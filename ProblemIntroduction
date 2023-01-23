@@ -1,0 +1,45 @@
+This is the assignment for this project written up by Professor Dr.Kooshesh.
+
+Objectives
+
+The objective of this lab is for you to become more comfortable with recursion. Please keep in mind that none of the problems that you have been asked to solve in this lab should be implemented recursively. However, these problems are easy to understand and solve iteratively and as a result, they you should be able to focus on recursive thinking and not be inhibited by the complexity of the problems. 
+Introduction
+
+For this lab, you have been asked to write solutions to 4 independent problems. For each problem, you will have to write an iterative solution and a recursive solution. Here are the rules that apply to all these problems.
+
+    In your iterative solutions, you may not use any nested loops. This is to encourage you to use helper functions. Using helper functions, when appropriate, add clarity to your solutions and as a result, you might be better able to come up with recursive solutions to the same problems. 
+    In your recursive solutions, you may not use any loops. If you were to write helper functions for your recursive solutions, they too, have to be recursive. 
+    In either of the iterative and the recursive solutions, you will have to design the function prototypes for the helper functions.
+    The input file for each problem contains a set of integers. Therefore, you should write a function that, given a file name and an int vector, opens the file, reads the stores the input values into the vector. Here is the function-prototype for this function. You call this function in your main function and then use the vector into which the numbers are stored by read_numbers to call other functions. Here is an example main function.  
+
+Download Here is an example main function. 
+
+    void read_numbers(std::string fileName, std::vector<int> &v);
+
+As indicated above, there are 4 problems and each problem has an iterative version and a recursive version. Each of them gives rise to a function prototypes (see below). In addition, you will have to write function prototypes for the helper functions that you might need in solving some of these function. All these function prototypes, including the function prototype for read_numbers, should be stored in a file called project3.hpp. The solutions for these functions get stored in project3.cpp. These functions are all global functions -- they are not part of any C++ class.
+Based on the previous item, your solution to this project should consist of 3 files; project3.hpp, project3.cpp, and main.cpp. In particular, main.cpp has only one function, int main(int argc, char *argv[]);.
+Each problem has a base name. The names of the iterative and the recursive functions for any of the problems use, as a prefix, this base name. For example, the base name for Count Inversions problem is count_inversions. Based on that, the names of the iterative and recursive functions for the problem are count_inversions_iterative and count_inversions _recursive, respectively.
+Therefore, the following is a list of function prototypes that get stored in project3.hpp. The implementations of these functions get stored in project3.cpp. Please also see item 5 of this list.
+
+int count_inversions_iterative(const std::vector<int> &numbers);
+int count_inversions_recursive(const std::vector<int> &numbers, int n);
+void largest_left_iterative(const std::vector<int> &numbers, std::vector<int> &result);
+void largest_left_recursive(const std::vector<int> &numbers, std::vector<int> &result, int n);
+void larger_left_right_iterative(const std::vector<int> &numbers, std::vector<int> &result);
+void larger_left_right_recursive(const std::vector<int> &numbers, std::vector<int> &result, int n);
+int increasing_sequences_iterative(std::vector<int> &numbers);
+int increasing_sequences_recursive(std::vector<int> &numbers, int startIdx);
+void read_numbers(std::string fileName, std::vector<int> &v);
+
+You probably want to make your main function to test one of these function at a times. For example, to test count inversions, in your main function, you would comment calls to all other functions (except for read_input) out and then, add the code that calls count_inversions_iterative and/or count_inversions_recursive.
+Therefore, you (and us) should be able to compile and run your count_inversion_iterative in the following way. Note that, from the way that we compile and run the program, it is not obvious which function is being tested. But, of course, as you develop your code, you know which function you are testing. We will run your code against our own main functions to test your solution to each of the functions. Please note that in spite of the fact that we use our own main functions, you should provide a main function that you have used to test your solutions to these functions.
+
+        g++ -std=c++17 project.cpp main.cpp 
+        ./a.out count_inversions_input.txt
+
+Here is a sample main.cpp for this project
+Download Here is a sample main.cpp for this project. Notice that it only includes your  project3.hpp and as in the previous item, it gets linked with your project3.cpp. In addition, the vectors get created in main and are passed to the functions as necessary. Finally, main function writes the output in a format that is easily readable.
+Here is a sample input file for this project
+Download Here is a sample input file for this project. Input values are separated from one another by use of white spaces (at least one space, tab, or new-line character).
+The output should be printed to the standard output. The main function is the only function that prints the output. None of the other functions should print any output once you turn in your solutions. 
+You should create a directory (folder) for this project called project3 and store all relevant files in this directory. You then zip and upload this directory.
